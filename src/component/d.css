@@ -1,0 +1,30 @@
+.dotmapcontainer{
+    width: 90%;
+    margin: auto;
+}
+.bar{
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+.square{
+    margin-top: 25px;
+    /* height: 50px;
+    width: 50px;
+    color: black; */
+    /* rounded-0 w-75 mt-5 mb-5 */
+}
+.progress{
+    text-align-last: left;
+    width: 100%;
+    margin: auto;
+}
+.wrapper p{
+    color: black;
+    position: absolute;
+    font-weight: 500;
+}
+
+@media (mac-width:300px){
+    
+}
