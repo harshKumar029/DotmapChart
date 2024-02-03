@@ -9,39 +9,102 @@ const Dotmapchart = () => {
     {
       lat: 43.0,
       lng: -75.0,
+      region: "SE",
       data: 590
+    },
+    {
+      lat: 43.0,
+      lng: -75.0,
+      region: "SE",
+      data: 3051
+    },
+    {
+      lat: 12.25,
+      lng: -68.75,
+      region: "AN",
+      data: 2000
+    },
+    {
+
+      lat: -21.5,
+      lng: 165.5,
+      region: "NC",
+      data: 880
+    },
+    {
+
+      lat: -41,
+      lng: 174,
+      region: "NZ",
+      data: 2160
+    },
+    {
+
+      lat: 13,
+      lng: -85,
+      region: "NI",
+      data: 800
+    },
+    {
+      lat: 16,
+      lng: 8,
+      region: "NE",
+      data: 1600
+    },
+    {
+      lat: 10,
+      lng: 8,
+      region: "NG",
+      data: 1200
+    },
+    {
+      lat: 15.2,
+      lng: 145.75,
+      region: "MP",
+      data: 1000
+    },
+    {
+      lat: 62,
+      lng: 10,
+      region: "NO",
+      data: 860
+    },
+    {
+      lat: 21,
+      lng: 57,
+      region: "OM",
+      data: 490
     },
     {
       lat: -22.906847,
       lng: -43.172897,
-      data: 790
+      region: "AT",
+      data: 390
     },
     {
       lat: 52.370216,
       lng: 4.895168,
+      region: "US",
       data: 490
     },
     {
       lat: 35.365989221172114,
       lng: 139.47640980149473,
+      region: "AT",
       data: 290,
     },
     {
       lat: 20.365989221172114,
       lng: 69.47640980149473,
+      region: "US",
       data: 290,
     },
-    {
-      lat: 30.365989221172114,
-      lng: 159.47640980149473,
-      data: 390,
-    }
   ];
 
   const getColorAndRadius = (data) => {
-    if (data > 600) return { color: "#0449B2", radius: 3.6 };
-    else if (data > 400) return { color: "#2C80FF", radius: 2.9 };
-    else if (data > 300) return { color: "#72AAFF", radius: 2.6 };
+    if (data > 2000) return { color: "#044ab2e3", radius: 3.6 };
+    else if (data > 1000) return { color: "#2C80FF", radius: 2.9 };
+    else if (data > 500) return { color: "#72AAFF", radius: 2.6 };
     else return { color: "#C1D9FF", radius: 2 };
   };
 
@@ -55,9 +118,9 @@ const Dotmapchart = () => {
 
     points.forEach((point) => {
       const data = point.data;
-      if (data > 600) counts[0] += data;
-      else if (data > 400) counts[1] += data;
-      else if (data > 300) counts[2] += data;
+      if (data > 2000) counts[0] += data;
+      else if (data > 1000) counts[1] += data;
+      else if (data > 500) counts[2] += data;
       else if (data > 200) counts[3] += data;
     });
 
@@ -98,7 +161,7 @@ const Dotmapchart = () => {
           >
             <div className='wrapper'>
               <div class="square "></div>
-              <p> &gt; $5k {percentages[0]}%</p>
+              <p> <span>&gt; $5k</span> {percentages[0]}%</p>
             </div>
           </div>
           <div
@@ -111,7 +174,7 @@ const Dotmapchart = () => {
           >
             <div className='wrapper'>
               <div class="square"></div>
-              <p>$1-$5k  {percentages[1]}%</p>
+              <p><span>$1-$5k</span>  {percentages[1]}%</p>
             </div>
           </div>
           <div
@@ -124,7 +187,7 @@ const Dotmapchart = () => {
           >
             <div className='wrapper'>
               <div class="square"></div>
-              <p>$500-$1k  $600 {percentages[2]}%</p>
+              <p><span>$500-$1k  $600</span> {percentages[2]}%</p>
             </div>
           </div>
           <div
@@ -137,7 +200,7 @@ const Dotmapchart = () => {
           >
             <div className='wrapper'>
               <div class="square"></div>
-              <p> &lt;$500  $600 {percentages[3]}%</p>
+              <p> <span>&lt;$500  $600</span> {percentages[3]}%</p>
             </div>
           </div>
         </div>

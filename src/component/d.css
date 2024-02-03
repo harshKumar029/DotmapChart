@@ -1,6 +1,7 @@
 .dotmapcontainer{
     width: 90%;
     margin: auto;
+    columns: #044ab2e3;
 }
 .bar{
     display: flex;
@@ -25,6 +26,8 @@
     font-weight: 500;
 }
 
-@media (mac-width:300px){
-    
+@media (max-width:996px){
+    .wrapper p{
+        font-size: 6px;
+    }
 }
